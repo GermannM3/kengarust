@@ -1,6 +1,8 @@
 pub mod api;
 pub mod interface;
 pub mod ws;
+pub use interface::WebServer; // если WebServer объявлен публично в interface.rs
+
 
 /// Запуск веб-интерфейса (с объединением API и интерфейса).
 pub async fn run_web_interface() {

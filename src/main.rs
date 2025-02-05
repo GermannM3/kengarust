@@ -6,11 +6,14 @@ mod network;
 mod utils;
 mod social;
 
+
 use crate::neural::cortex::Cortex;
 use crate::bot::telegram::TelegramBot;
 use crate::web::interface::WebServer;
 use crate::network::p2p::P2PNetwork;
-use crate::autonomous::learning::start_cycle; // Убедитесь, что эта функция существует
+use crate::autonomous::start_cycle;
+use crate::autonomous::learning::start_cycle; // если функция существует
+
 
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn std::error::Error>> {

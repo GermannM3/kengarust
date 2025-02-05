@@ -1,6 +1,7 @@
 use burn::tensor::backend::Backend;
-use burn::nn::{Conv2d, Conv2dConfig};
+use burn::nn::conv::{Conv2d, Conv2dConfig};
 use burn::module::Module;
+use serde::{Serialize, Deserialize};
 
 #[derive(Module, Debug)]
 pub struct VisionProcessor<B: Backend> {

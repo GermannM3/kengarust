@@ -1,5 +1,6 @@
 use burn::tensor::backend::Backend;
 use burn::nn::conv::{Conv2d, Conv2dConfig};
+use serde::{Serialize, Deserialize};
 use burn::module::Module;
 
 #[derive(Module, Debug)]
