@@ -1,5 +1,5 @@
 use burn::tensor::backend::Backend;
-use burn::nn::{Linear, LinearConfig};
+use burn::nn::conv::{Conv2d, Conv2dConfig};
 use burn::module::Module;
 
 #[derive(Module, Debug)]

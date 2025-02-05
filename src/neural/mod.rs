@@ -3,3 +3,5 @@ pub mod memory;
 pub mod processors;
 
 
+
+pub use cortex::Cortex;

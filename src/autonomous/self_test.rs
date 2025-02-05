@@ -1,4 +1,4 @@
-use crate::neural::Cortex;
+use crate::neural::cortex::Cortex;
 use std::sync::Arc;
 
 pub struct SelfTester {
