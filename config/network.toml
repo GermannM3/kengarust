@@ -1,0 +1,4 @@
+[network]
+port = 3030
+max_peers = 50
+

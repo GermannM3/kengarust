@@ -1,0 +1,4 @@
+# Конфигурация автономного обучения
+learning_interval: 600
+max_data_points: 1000
+
