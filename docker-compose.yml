@@ -1,16 +1,18 @@
-version: "3.8"
+
 
 services:
   neuro-core:
-    build: .
-    environment:
-      - RUST_LOG=info
-      - AUTONOMOUS_MODE=1
-    volumes:
-      - ./data:/var/lib/neuro
+    build:
+      context: .
+      dockerfile: Dockerfile
     ports:
       - "8080:8080"
-      - "9090:9090"
+      - "3000:3000"
+    environment:
+      - RUST_LOG=info
+      - AUTONOMOUS_MODE=true
+    volumes:
+      - ./config:/app/config
 
   monitoring:
     image: grafana/grafana

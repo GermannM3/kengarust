@@ -2,44 +2,39 @@
 name = "kengarust"
 version = "0.1.0"
 edition = "2021"
-description = "Описание вашего проекта"
-license = "MIT"
-repository = "https://github.com/ваш_проект/репозиторий"
-homepage = "https://ваш_проект.сайт"
-documentation = "https://docs.ваш_проект.сайт"
-readme = "README.md"
-keywords = ["example", "rust", "project"]
-categories = ["category1", "category2"]
-authors = ["Ваше Имя <ваш.email@пример.com>"]
-serde = "1.0"
 
-[features]
-default = ["web", "telegram"]
-web = []
-telegram = []
-autonomous = ["crawler", "self-learning"]
-crawler = []
-self-learning = []
-unrestricted = []
+description = "Rust based AI assistant with web and telegram interfaces"
+repository = "https://github.com/kengarust/kengarust"
+homepage = "https://kengarust.dev"
+documentation = "https://docs.kengarust.dev"
+authors = ["Kenga Team <team@kengarust.dev>"]
+
 
 [dependencies]
-# Основные зависимости
-async-trait = "0.1"
-select = "0.5"
-libp2p = "0.45"
-tokio = { version = "1.0", features = ["full"] }
-burn = { version = "0.10", features = ["ndarray"] }
-teloxide = { version = "0.12", features = ["macros"] }
-axum = "0.6"
-reqwest = { version = "0.11", features = ["json"] }
+
+async-trait = "0.1.74"
+select = "0.5.0"
+libp2p = "0.45.1"
+tokio = { version = "1.32.0", features = ["full"] }
+burn = { version = "0.10.0", features = ["ndarray"] }
+teloxide = { version = "0.12.2", features = ["macros"] }
+axum = { version = "0.6.20", features = ["ws"] }
+reqwest = { version = "0.11.22", features = ["json"] }
+serde = "1.0.188"
+home = "0.5.11"  # Обновляем до последней доступной версии
+scraper = { version = "0.13.0", optional = true }
+openssl = { version = "0.10.57", optional = true }
+dotenv = "0.15.0"
+futures = "0.3.25"
+tracing = "0.1.37"
+log = "0.4.17"
+pretty_env_logger = "0.4.0"
+tracing-subscriber = "0.3.16"
 
 # Автономные функции
-[target.'cfg(feature = "autonomous")'.dependencies]
-scraper = "0.13"
-
-# Безопасность
-openssl = { version = "0.10", optional = true }
+[features]
+default = []
+autonomous = ["dep:scraper", "dep:openssl"]
 
 [dev-dependencies]
-test-case = "2.2"
-
+test-case = "2.2.2"

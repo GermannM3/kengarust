@@ -1,6 +1,6 @@
-use social_forecaster::{predict, AnalysisContext};
+use crate::social_forecaster::{predict, AnalysisContext};
 
-pub async fn generate_forecast(cortex: &Cortex) -> String {
+pub async fn generate_forecast(cortex: &crate::neural::DefaultCortex) -> String {
     let context = AnalysisContext {
         knowledge_graph: cortex.memory.export_knowledge(),
         temporal_data: cortex.get_temporal_patterns(),
@@ -11,7 +11,7 @@ pub async fn generate_forecast(cortex: &Cortex) -> String {
 
 use crate::neural::Cortex;
 
-pub async fn predict_trends(cortex: &Cortex) -> String {
+pub async fn predict_trends(cortex: &crate::neural::DefaultCortex) -> String {
     // Заглушка для интеграции
     "Прогноз: Рост интереса к AI".into()
 }

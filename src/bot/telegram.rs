@@ -37,3 +37,16 @@ pub async fn run_bot() {
     run_telegram_bot().await;
 }
 
+// Заглушка для Telegram‑бота
+pub struct TelegramBot;
+
+impl TelegramBot {
+    pub fn new() -> Self {
+        TelegramBot
+    }
+    
+    pub fn start(&self) {
+        // Реализуйте запуск Telegram‑бота здесь
+    }
+}
+
